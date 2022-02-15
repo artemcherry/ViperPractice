@@ -9,7 +9,7 @@ import Foundation
 
 protocol MainPictureListPresenterProtocol: AnyObject {
     func getPictureList()
-    func getDescription()
+    func getDescription(picture: PictureModel)
 }
 
 class MainPictureListPresenter: MainPictureListPresenterProtocol {
@@ -38,8 +38,8 @@ class MainPictureListPresenter: MainPictureListPresenterProtocol {
         }
     }
     
-    func getDescription() {
-        
+    func getDescription(picture: PictureModel) {
+        router?.openDetailScreen(picture: picture)
     }
     
 }

@@ -9,7 +9,7 @@ import UIKit
 
 protocol AssemblyBuilderProtocol {
     func createPictureListModule(router: RouterProtocol) -> UIViewController?
-    func createPictureDescriptionModule(router: RouterProtocol) -> UIViewController?
+    func createPictureDescriptionModule(router: RouterProtocol, picture: PictureModel) -> UIViewController?
     
 }
 
@@ -24,10 +24,12 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         return pictureListViewController
     }
     
-    func createPictureDescriptionModule(router: RouterProtocol) -> UIViewController? {
+    func createPictureDescriptionModule(router: RouterProtocol, picture: PictureModel) -> UIViewController? {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         guard let descriptionVC = mainStoryboard.instantiateViewController(withIdentifier: "DescriptionVC") as? PictureDetailView else { return nil }
-        return nil
+        let presenter = PictureDetailPresenter(view: descriptionVC, router: router, picture: picture)
+        descriptionVC.presenter = presenter
+        return descriptionVC
     }
     
     

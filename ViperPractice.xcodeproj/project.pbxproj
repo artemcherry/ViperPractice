@@ -25,6 +25,7 @@
 		446337B727BABE4A00F9BDCB /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 446337B527BABE4A00F9BDCB /* PictureCell.xib */; };
 		446337BA27BB709F00F9BDCB /* PictureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446337B927BB709F00F9BDCB /* PictureDetailView.swift */; };
 		4487678727BBDCF600C9ACA3 /* PictureDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4487678627BBDCF600C9ACA3 /* PictureDetailPresenter.swift */; };
+		4487678D27BC1BFD00C9ACA3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4487678C27BC1BFD00C9ACA3 /* UIImageViewExtension.swift */; };
 		FD8B2CCB697758F653891578 /* Pods_ViperPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9580061BB2F081031C04D0 /* Pods_ViperPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		446337B527BABE4A00F9BDCB /* PictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCell.xib; sourceTree = "<group>"; };
 		446337B927BB709F00F9BDCB /* PictureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailView.swift; sourceTree = "<group>"; };
 		4487678627BBDCF600C9ACA3 /* PictureDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDetailPresenter.swift; sourceTree = "<group>"; };
+		4487678C27BC1BFD00C9ACA3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		56F58C95506C51F7CFAC65E6 /* Pods-ViperPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperPractice.release.xcconfig"; path = "Target Support Files/Pods-ViperPractice/Pods-ViperPractice.release.xcconfig"; sourceTree = "<group>"; };
 		5CFA755130EAF5510BF2951E /* Pods-ViperPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViperPractice.debug.xcconfig"; path = "Target Support Files/Pods-ViperPractice/Pods-ViperPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		EC9580061BB2F081031C04D0 /* Pods_ViperPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViperPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 		442F649327BB90DB00B8B7FC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				446337A927BABA3400F9BDCB /* Model */,
 				442F649427BB913B00B8B7FC /* ModuleBuilder.swift */,
 				446337A527BAB94B00F9BDCB /* PictureListModule */,
 				446337B827BB706B00F9BDCB /* PictureDetailModule */,
@@ -97,6 +100,7 @@
 		4463378B27BAB63500F9BDCB /* ViperPractice */ = {
 			isa = PBXGroup;
 			children = (
+				4487678B27BC1BE000C9ACA3 /* Extensions */,
 				446337A427BAB92900F9BDCB /* Main */,
 				442F649327BB90DB00B8B7FC /* Modules */,
 			);
@@ -152,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				4487678227BBB97000C9ACA3 /* Router */,
-				446337A927BABA3400F9BDCB /* Model */,
 				446337A727BABA1C00F9BDCB /* Interactor */,
 				446337A627BABA1400F9BDCB /* Presenter */,
 				446337A027BAB8E000F9BDCB /* View */,
@@ -244,6 +247,14 @@
 			children = (
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4487678B27BC1BE000C9ACA3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4487678C27BC1BFD00C9ACA3 /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8BF2D128D228DBF9825ACE6C /* Frameworks */ = {
@@ -384,6 +395,7 @@
 				4487678727BBDCF600C9ACA3 /* PictureDetailPresenter.swift in Sources */,
 				4463378D27BAB63500F9BDCB /* AppDelegate.swift in Sources */,
 				446337AF27BABC9600F9BDCB /* Router.swift in Sources */,
+				4487678D27BC1BFD00C9ACA3 /* UIImageViewExtension.swift in Sources */,
 				442F648E27BB805300B8B7FC /* NetworkManager.swift in Sources */,
 				442F649027BB806D00B8B7FC /* RealmManager.swift in Sources */,
 				446337B227BABCFE00F9BDCB /* PictureModel.swift in Sources */,

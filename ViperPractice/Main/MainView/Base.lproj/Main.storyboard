@@ -50,13 +50,42 @@
                     <view key="view" contentMode="scaleToFill" id="FdJ-o5-h46">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jAt-Og-0tj">
+                                <rect key="frame" x="20" y="112" width="374" height="333"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Lrh-5D-2QK"/>
+                                    <constraint firstAttribute="height" constant="333" id="OPv-GD-or1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eya-J8-qxX">
+                                <rect key="frame" x="20" y="506" width="374" height="99"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Tcy-OE-bDl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tcy-OE-bDl" firstAttribute="trailing" secondItem="eya-J8-qxX" secondAttribute="trailing" constant="20" id="Eso-v4-P1u"/>
+                            <constraint firstItem="Tcy-OE-bDl" firstAttribute="trailing" secondItem="jAt-Og-0tj" secondAttribute="trailing" constant="20" id="GiH-MN-EIq"/>
+                            <constraint firstItem="Tcy-OE-bDl" firstAttribute="bottom" secondItem="eya-J8-qxX" secondAttribute="bottom" constant="257" id="Pnz-A5-C2h"/>
+                            <constraint firstItem="eya-J8-qxX" firstAttribute="top" secondItem="jAt-Og-0tj" secondAttribute="bottom" constant="61" id="SXL-Vu-v0c"/>
+                            <constraint firstItem="jAt-Og-0tj" firstAttribute="leading" secondItem="Tcy-OE-bDl" secondAttribute="leading" constant="20" id="abL-MX-BwX"/>
+                            <constraint firstItem="Tcy-OE-bDl" firstAttribute="bottom" secondItem="jAt-Og-0tj" secondAttribute="bottom" constant="417" id="bSA-QS-VxM"/>
+                            <constraint firstItem="eya-J8-qxX" firstAttribute="leading" secondItem="Tcy-OE-bDl" secondAttribute="leading" constant="20" id="ksA-bh-9Kv"/>
+                            <constraint firstItem="jAt-Og-0tj" firstAttribute="top" secondItem="Tcy-OE-bDl" secondAttribute="top" constant="68" id="l6t-cP-KPu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="jAt-Og-0tj" id="RjK-S2-8Fv"/>
+                        <outlet property="nameLabel" destination="eya-J8-qxX" id="hQV-iY-UQ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2O-dM-2pI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="64"/>
+            <point key="canvasLocation" x="1834.7826086956522" y="63.616071428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hyh-EW-bJG">

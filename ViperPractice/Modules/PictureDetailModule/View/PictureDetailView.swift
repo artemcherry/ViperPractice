@@ -7,23 +7,25 @@
 
 import UIKit
 
-class PictureDetailView: UIViewController {
+protocol PictureDetailViewProtocol: AnyObject {
+    func setupView(model: PictureModel)
+}
 
+class PictureDetailView: UIViewController, PictureDetailViewProtocol {
+
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    
+    var presenter: PictureDetailPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter?.getPictures()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupView(model: PictureModel) {
+        imageView.load(url: model.originalImage)
+        nameLabel.text = model.name
     }
-    */
 
 }

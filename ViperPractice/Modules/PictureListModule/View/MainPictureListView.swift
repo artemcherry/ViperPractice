@@ -22,7 +22,6 @@ class MainPictureListView: UIViewController, MainPictureListViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         cellRegister()
         getPicture()
         title = "Pictures"
@@ -59,5 +58,13 @@ extension MainPictureListView: UITableViewDataSource {
         cell.setupCell(model: pictures[indexPath.row])
         
         return cell
+    }
+}
+
+extension MainPictureListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let pictures = pictures else { return }
+        presenter?.getDescription(picture: pictures[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
