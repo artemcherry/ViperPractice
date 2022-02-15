@@ -15,15 +15,15 @@ class NetworkManager {
     func getData(completion: @escaping ([NetworkPictureModel]?, Error?) -> Void) {
         guard let url = URL(string: url) else { return }
         
-        AF.session.dataTask(with: url) { data, response, error in
-            if let data = data {
-                let json = try? JSONDecoder().decode([NetworkPictureModel].self, from: data)
+        AF.request(url).responseData { response in
+            if let data = response.data {
+                guard let decodedData = try? JSONDecoder().decode([NetworkPictureModel].self, from: data) else { return }
                 DispatchQueue.main.async {
-                    completion(json, nil)
+                    completion(decodedData, nil)
                 }
             } else {
                 DispatchQueue.main.async {
-                    completion(nil, error)
+                    completion(nil, response.error)
                 }
             }
         }

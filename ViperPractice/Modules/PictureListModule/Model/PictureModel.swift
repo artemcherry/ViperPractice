@@ -8,6 +8,7 @@
 import Foundation
 
 struct PictureModel {
+    let albumId: Int
     let image: String
     let name: String
 }

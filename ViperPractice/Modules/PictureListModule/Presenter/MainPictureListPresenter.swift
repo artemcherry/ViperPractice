@@ -9,13 +9,14 @@ import Foundation
 
 protocol MainPictureListPresenterProtocol: AnyObject {
     func getPictureList()
+    func getDescription()
 }
 
 class MainPictureListPresenter: MainPictureListPresenterProtocol {
     
-    private let router: RouterProtocol
-    private let interactor: MainPictureListInteractorProtocol
-    private let view: MainPictureListViewProtocol
+    private let router: RouterProtocol?
+    private let interactor: MainPictureListInteractorProtocol?
+    private let view: MainPictureListViewProtocol?
     
     
     required init(view: MainPictureListViewProtocol,
@@ -27,13 +28,19 @@ class MainPictureListPresenter: MainPictureListPresenterProtocol {
     }
     
     func getPictureList() {
+        guard let interactor = interactor else { return }
         interactor.createPictureList { pictures, error in
             if let pictures = pictures {
-                print(pictures)
+                self.view?.setupModel(model: pictures)
             } else {
                 print("Ошибка")
             }
         }
     }
+    
+    func getDescription() {
+        
+    }
+    
 }
  

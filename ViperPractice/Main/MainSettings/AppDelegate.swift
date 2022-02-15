@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let assemblyBuilder = AssemblyBuilder()
         let router = Router(assemblyBuilder: assemblyBuilder)
         
+        guard let rootVC = assemblyBuilder.createPictureListModule(router: router) else { return false }
         
-        self.window?.rootViewController = assemblyBuilder.createPictureListModule(router: router)
+        self.window?.rootViewController = UINavigationController(rootViewController: rootVC)
         self.window?.makeKeyAndVisible()
         
         return true
