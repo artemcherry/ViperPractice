@@ -12,13 +12,13 @@ protocol RouterMain {
     var assemblyBuilder: AssemblyBuilderProtocol? { get }
 }
 
-protocol RouterProtocol {
+protocol RouterProtocol: RouterMain {
     func openDetailScreen(picture: PictureModel)
 }
  
 class Router: RouterProtocol {
     
-    private let assemblyBuilder: AssemblyBuilderProtocol?
+    var assemblyBuilder: AssemblyBuilderProtocol?
     private let navController: UINavigationController?
     
     init(assemblyBuilder: AssemblyBuilderProtocol, navController: UINavigationController) {

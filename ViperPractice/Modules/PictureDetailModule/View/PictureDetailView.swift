@@ -13,8 +13,8 @@ protocol PictureDetailViewProtocol: AnyObject {
 
 class PictureDetailView: UIViewController, PictureDetailViewProtocol {
 
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     var presenter: PictureDetailPresenterProtocol?
     
@@ -24,7 +24,7 @@ class PictureDetailView: UIViewController, PictureDetailViewProtocol {
     }
 
     func setupView(model: PictureModel) {
-        imageView.load(url: model.originalImage)
+        imageView.load(url: model.originalImage ?? "")
         nameLabel.text = model.name
     }
 

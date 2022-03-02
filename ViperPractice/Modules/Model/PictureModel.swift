@@ -8,9 +8,9 @@
 import Foundation
 
 struct PictureModel {
-    let albumId: Int
-    let id: Int
-    let smallImage: String
-    let name: String
-    let originalImage: String
+    let albumId: Int?
+    let id: Int?
+    let smallImage: String?
+    let name: String?
+    let originalImage: String?
 }

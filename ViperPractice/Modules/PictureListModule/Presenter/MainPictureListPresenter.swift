@@ -29,7 +29,8 @@ class MainPictureListPresenter: MainPictureListPresenterProtocol {
     
     func getPictureList() {
         guard let interactor = interactor else { return }
-        interactor.createPictureList { pictures, error in
+        interactor.createPictureList { [weak self]  pictures, error in
+            guard let self = self else { return }
             if let pictures = pictures {
                 self.view?.setupModel(model: pictures)
             } else {

@@ -18,7 +18,7 @@ class MainPictureListView: UIViewController, MainPictureListViewProtocol {
     
     private let cell = PictureCell()
     var presenter: MainPictureListPresenterProtocol?
-    var pictures: [PictureModel]?
+    private var pictures: [PictureModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class MainPictureListView: UIViewController, MainPictureListViewProtocol {
         tableView.register(nibFile, forCellReuseIdentifier: cell.idebtifier)
     }
     
-    func getPicture() {
+    private func getPicture() {
         guard let presenter = presenter else { return }
         DispatchQueue.main.async {
             presenter.getPictureList()

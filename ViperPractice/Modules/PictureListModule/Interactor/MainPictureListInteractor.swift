@@ -21,7 +21,9 @@ class MainPictureListInteractor: MainPictureListInteractorProtocol {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else { return }
             self.networkManager.getData { [weak self] networkPicture, error in
-                guard let self = self else { return }
+                guard let self = self,
+                      error == nil
+                else { return }
                 if let networkPicture = networkPicture {
                     let convertedModel = self.converterFromNetwork(model: networkPicture)
                     let filteredModel = convertedModel.filter { $0.albumId  == 1 }
@@ -35,11 +37,6 @@ class MainPictureListInteractor: MainPictureListInteractorProtocol {
                     let convertedData = self.convertFromData(model: savedData)
                     DispatchQueue.main.async {
                         competion(convertedData, nil)
-                    }
-                }
-                if let error = error {
-                    DispatchQueue.main.async {
-                        competion(nil, error)
                     }
                 }
             }
@@ -59,11 +56,11 @@ class MainPictureListInteractor: MainPictureListInteractorProtocol {
     
     private func convertToData(model: [PictureModel]) -> [DataPictureModel] {
         return model.map {
-            DataPictureModel(albumId: $0.albumId,
-                                            id: $0.id,
-                                            title: $0.name,
-                                            url: $0.originalImage,
-                                            thumbnailUrl: $0.smallImage)
+            DataPictureModel(albumId: $0.albumId ?? 0,
+                                            id: $0.id ?? 0,
+                                            title: $0.name ?? "",
+                                            url: $0.originalImage ?? "",
+                                            thumbnailUrl: $0.smallImage ?? "")
         }
     }
     

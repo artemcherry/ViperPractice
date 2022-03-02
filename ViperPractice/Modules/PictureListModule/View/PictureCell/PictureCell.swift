@@ -15,7 +15,7 @@ class PictureCell: UITableViewCell {
     let idebtifier = "cell"
     
     func setupCell(model: PictureModel) {
-        picture.load(url: model.smallImage)
+        picture.load(url: model.smallImage ?? "")
         nameLabel.text = model.name
     }
     
